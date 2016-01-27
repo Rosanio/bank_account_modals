@@ -39,19 +39,54 @@
     <div id="accountBalance">
       <h1>$<span id="money"></span></h1>
     </div>
-    <form id="money-form">
-      <p>Deposit or withdraw money</p>
-      <div class="form-group">
-        <label for="deposit">Deposit Amount</label>
-        <input type="number" class="form-control" id="deposit" value="test" placeholder="enter amount to deposit">
-      </div>
-      <div class="form-group">
-        <label for="withdraw">Withdraw Amount</label>
-        <input type="number" class="form-control" id="withdraw" value="test" placeholder="enter amount to withdraw">
-      </div>
 
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#depositModal">
+      Make a Deposit
+    </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#withdrawModal">
+      Make a Withdrawl
+    </button>
+
+
+<!--Modals-->
+
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Enter your Deposit</h4>
+          </div>
+          <div class="modal-body">
+            <form id='depositForm'>
+              <div class='form-group'>
+                <input type="number" class="form-control" id="deposit" placeholder="enter amount to deposit">
+              </div>
+              <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+            </form>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="withdrawModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Enter your Withdrawl</h4>
+          </div>
+          <div class="modal-body">
+            <form id='withdrawlForm'>
+              <div class='form-group'>
+                <input type="number" class="form-control" id="withdraw" placeholder="enter amount to withdraw">
+              </div>
+              <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+            </form>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
   </div>
 
 </body>

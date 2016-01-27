@@ -35,36 +35,22 @@ $(function() {
     $(".firstName").text(name);
     $("#money").text(balance);
 
-    $("form#money-form").submit(function(event) {
+    $('form#depositForm').submit(function(event) {
       var deposit = parseInt($("input#deposit").val());
+      var depoBalance = newAccount.deposit(deposit);
+      $("#money").text(depoBalance);
+      event.preventDefault();
+    });
+
+    $("form#withdrawlForm").submit(function(event) {
       var withdraw = parseInt($("input#withdraw").val());
-      console.log(deposit);
-      console.log(withdraw);
-
-
-
-      if (isNaN(withdraw)) {
-        var depoBalance = newAccount.deposit(deposit);
-        $("#money").text(depoBalance);
-      } else if (isNaN(deposit)) {
-        if (withdraw > newAccount.balance) {
-          alert("There is not enough money in your account for this transaction.");
-        } else {
-          var withdrawBalance = newAccount.withdraw(withdraw);
-          $("#money").text(withdrawBalance);
-        }
+      if (withdraw > newAccount.balance) {
+        alert("There is not enough money in your account for this transaction.");
       } else {
-        var total = deposit - withdraw;
-        if (-total > newAccount.balance) {
-          alert("There is not enough money in your account for this transaction.");
-        } else {
-        var totalBalance = newAccount.deposit(total);
-        $("#money").text(totalBalance);
-        }
+        var withdrawBalance = newAccount.withdraw(withdraw);
+        $("#money").text(withdrawBalance);
       }
-
     event.preventDefault();
-
     });
   });
 });
