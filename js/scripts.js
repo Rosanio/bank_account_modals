@@ -12,6 +12,16 @@ BankAccount.prototype.withdraw = function(amount) {
 }
 
 $(function() {
+  $("#signUpLink").click(function() {
+    $(".signUp").show();
+    $(".accountDisplay").hide();
+  });
+
+  $("#logo").click(function() {
+    $(".signUp").show();
+    $(".accountDisplay").hide();
+  });
+
   $("form#bank-form").submit(function(event) {
     var name = $("input#name").val();
     var balance = parseInt($("input#init").val());
@@ -57,5 +67,4 @@ $(function() {
 
     });
   });
-
 });

@@ -1,3 +1,28 @@
 .accountDisplay {
   display: none;
 }
+
+#signUp {
+  text-align: right;
+  font-size: 20px;
+  padding-top: 25px;
+}
+
+#signUp p {
+  margin-left: 91px;
+  cursor: pointer;
+  color: red;
+}
+
+#signUp p:hover {
+  text-decoration: underline;
+}
+
+#logo {
+  cursor: pointer;
+}
+
+
+#navigation {
+  padding-bottom: -10px;
+}
